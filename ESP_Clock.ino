@@ -6,6 +6,8 @@
 * Version:        3.0
 * Target Devices: ESP8266 (Nodemcu)
 * Tool versions:  Arduino 1.8.13
+*
+* URL:            https://19dx.ru/2020/10/esp8266-meteoclock/
 * 
 *******************************************************************************/
 
@@ -29,6 +31,7 @@
 #define password               "********"             // Пароль WiFi
 #define TIMEZONE               7                      // Временная зона
 #define ntpServerName          "ntp1.stratum2.ru"     // NTP сервер
+#define BRIGHTNESS             7                      // Яркость дисплея (255 максимальная)
 #define MATRIX_PIN             14                     // Номер GPIO подключения матрицы (14 = D5)
 #define SENSOR_RF_PIN          12                     // Номер GPIO подключения приёмника беспроводного датчика (12 = D6)
 #define SDA                    5                      // Номер GPIO шины I2C SDA (5 = D1)
@@ -133,7 +136,7 @@ void setup()
   
   matrix.begin();
   matrix.setTextWrap(false);
-  matrix.setBrightness(7);
+  matrix.setBrightness(BRIGHTNESS);
   matrix.setTextColor(colors[1]);
 
   //вкючение прослушивания радиоканала  
@@ -175,7 +178,7 @@ void loop()
     //Плавный переход
     if (Transition)
     {
-      for (int i = 0; i <= 7; i++)
+      for (int i = 0; i <= BRIGHTNESS; i++)
       {
         matrix.fillScreen(0);
         matrix.setTextColor(colors[0]);
@@ -205,7 +208,7 @@ void loop()
 
     if (millis() - lastTimeModeSwitch >= 15000)
     {
-      for (int i = 7; i >= 0; i--)
+      for (int i = BRIGHTNESS; i >= 0; i--)
       {
         matrix.setBrightness(i);
         matrix.show();
@@ -224,7 +227,7 @@ void loop()
   {
     if (Transition)
     {
-      for (int i = 0; i <= 7; i++)
+      for (int i = 0; i <= BRIGHTNESS; i++)
       {
         matrix.fillScreen(0);
         matrix.setTextColor(colors[1]);
@@ -239,7 +242,7 @@ void loop()
 
     if (millis() - lastTimeModeSwitch >= 5000)
     {
-      for (int i = 7; i >= 0; i--)
+      for (int i = BRIGHTNESS; i >= 0; i--)
       {
         matrix.setBrightness(i);
         matrix.show();
@@ -257,7 +260,7 @@ void loop()
   {
     if (Transition)
     {
-      for (int i = 0; i <= 7; i++)
+      for (int i = 0; i <= BRIGHTNESS; i++)
       {
         matrix.fillScreen(0);
         matrix.setTextColor(colors[2]);
@@ -294,7 +297,7 @@ void loop()
 
     if (millis() - lastTimeModeSwitch >= 5000)
     {
-      for (int i = 7; i >= 0; i--)
+      for (int i = BRIGHTNESS; i >= 0; i--)
       {
         matrix.setBrightness(i);
         matrix.show();
