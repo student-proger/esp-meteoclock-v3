@@ -1,1 +1,1 @@
-git+git://github.com/invandy/Oregon_NR
+git+git://github.com/invandy/Oregon_NR.git
