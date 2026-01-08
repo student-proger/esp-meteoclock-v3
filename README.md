@@ -2,7 +2,7 @@
 
 # ESP8266: Светодиодные часы с метеостанцией
 Текущая версия: **v3.0.0**    
-Подробности о проекте: [https://19dx.ru/2020/10/esp8266-meteoclock/](https://19dx.ru/2020/10/esp8266-meteoclock/)
+Подробности о проекте: [https://19dx.ru/esp8266:esp8266_svetodiodnye_chasy_s_meteostanciej](https://19dx.ru/esp8266:esp8266_svetodiodnye_chasy_s_meteostanciej)
 
 ![Фото часов](https://19dx.ru/wp-content/uploads/2020/10/2020-10-04-12.45.42.jpg)
 
